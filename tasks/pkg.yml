@@ -2,6 +2,7 @@
 - name: install pkg
   become: yes
   become_user: root
-  package:
+  yum:
     name: '{{ vagrant_pkg_download_dir }}/{{ vagrant_pkg }}'
     state: present
+    disable_gpg_check: yes
